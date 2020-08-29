@@ -8,7 +8,7 @@
  * 
  * @help  
  * =============================================================================
- * +++ lei - Easy Follow (v1.02) +++
+ * +++ lei - Easy Follow (v1.03) +++
  * By Lei-Ray
  * =============================================================================
  * 让你可以用指令简单的设定玩家跟随事件或事件跟随玩家的场景。
@@ -313,8 +313,8 @@ Game_Map.prototype.leiEasyFollowAlgorithm = function(type, eventId){					//跟�
 	switch (type){
 		case "PFE":
 			$gamePlayer.setMoveSpeed($gameMap.event(eventId).realMoveSpeed());
-			cx = Math.floor($gameMap.event(eventId)._realX); 
-			cy = Math.floor($gameMap.event(eventId)._realY); 
+			cx = $gamePlayer.leiFollowingEventOldX; //Math.floor($gameMap.event(eventId)._realX); 
+			cy = $gamePlayer.leiFollowingEventOldY; //Math.floor($gameMap.event(eventId)._realY); 
 			var sx = $gamePlayer.deltaXFrom(cx);
 			var sy = $gamePlayer.deltaYFrom(cy);
 			asx = Math.abs(sx); 
